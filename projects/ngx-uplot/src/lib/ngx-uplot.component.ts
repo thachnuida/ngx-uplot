@@ -1,6 +1,8 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges, ElementRef, OnDestroy } from '@angular/core';
-import uPlot from 'uplot';
+import * as _uPlot from 'uplot';
 import { NgxUplotService } from './ngx-uplot.service';
+
+const uPlot = (_uPlot as any).default ? (_uPlot as any).default : _uPlot;
 
 @Component({
   selector: 'ngx-uplot',
@@ -28,7 +30,6 @@ export class NgxUplotComponent implements OnChanges, OnDestroy {
   ) { }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('change');
     if (changes['options']) {
       this.addChartSize();
       const optionState = this.service.optionsUpdateState(changes['options'].previousValue, this.options);
@@ -74,7 +75,6 @@ export class NgxUplotComponent implements OnChanges, OnDestroy {
   }
 
   create() {
-    console.log('create');
     this.destroy();
     if (this.options && this.data) {
       this.chartElm = new uPlot(this.options, this.data, this._element.nativeElement);
