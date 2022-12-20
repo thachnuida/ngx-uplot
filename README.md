@@ -1,27 +1,64 @@
-# NgxUplot
+# Introduction
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+**@thachnuida/ngx-uplot** is an Angular wrapper for **uPlot**.
 
-## Development server
+# Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+[uPlot chart with tooltip](http://thachnuida.github.io/ngx-uplot)
 
-## Code scaffolding
+# Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+$ npm install @thachnuida/ngx-uplot uplot --save
+```
 
-## Build
+# Usage
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Import uplot css to `angular.json`:
 
-## Running unit tests
+```
+"styles": [
+  "your/app/styles.css",
+  "node_modules/uplot/dist/uPlot.min.css"
+],
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Import the `NgxUplotModule` into your desired module:
 
-## Running end-to-end tests
+```
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+import { NgxUplotModule } from '@thachnuida/ngx-uplot';
 
-## Further help
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    NgxUplotModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Add `ngx-uplot` to your component:
+
+```
+<ngx-uplot [options]="options" [data]="data"></ngx-uplot>
+```
+
+# uPlot Document
+
+Please check doucument in [uPlot document](https://github.com/leeoniya/uPlot/tree/master/docs).
+
+
+# License
+
+`ngx-uplot` is shared under the MIT license.

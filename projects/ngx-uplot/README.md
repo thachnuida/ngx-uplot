@@ -1,24 +1,64 @@
-# NgxUplot
+# Introduction
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+**@thachnuida/ngx-uplot** is an Angular wrapper for **uPlot**.
 
-## Code scaffolding
+# Demo
 
-Run `ng generate component component-name --project ngx-uplot` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-uplot`.
-> Note: Don't forget to add `--project ngx-uplot` or else it will be added to the default project in your `angular.json` file. 
+[uPlot chart with tooltip](http://thachnuida.github.io/ngx-uplot)
 
-## Build
+# Installation
 
-Run `ng build ngx-uplot` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+$ npm install @thachnuida/ngx-uplot uplot --save
+```
 
-## Publishing
+# Usage
 
-After building your library with `ng build ngx-uplot`, go to the dist folder `cd dist/ngx-uplot` and run `npm publish`.
+Import uplot css to `angular.json`:
 
-## Running unit tests
+```
+"styles": [
+  "your/app/styles.css",
+  "node_modules/uplot/dist/uPlot.min.css"
+],
+```
 
-Run `ng test ngx-uplot` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Import the `NgxUplotModule` into your desired module:
 
-## Further help
+```
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+import { NgxUplotModule } from '@thachnuida/ngx-uplot';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    NgxUplotModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+Add `ngx-uplot` to your component:
+
+```
+<ngx-uplot [options]="options" [data]="data"></ngx-uplot>
+```
+
+# uPlot Document
+
+Please check doucument in [uPlot document](https://github.com/leeoniya/uPlot/tree/master/docs).
+
+
+# License
+
+`ngx-uplot` is shared under the MIT license.
