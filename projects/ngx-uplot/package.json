@@ -1,9 +1,26 @@
 {
   "name": "@thachnuida/ngx-uplot",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "Angular wrapper for uplot.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thachnuida/ngx-uplot"
+  },
+  "homepage": "https://github.com/thachnuida/ngx-uplot#readme",
+  "author": {
+    "name": "Thach Nguyen",
+    "email": "thachnuida@gmail.com"
+  },
+  "keywords": [
+    "angular",
+    "uplot"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thachnuida/ngx-uplot/issues"
+  },
   "peerDependencies": {
-    "@angular/common": "^14.1.0",
-    "@angular/core": "^14.1.0"
+    "uplot": "^1.6.23"
   },
   "dependencies": {
     "tslib": "^2.3.0"
