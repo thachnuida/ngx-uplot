@@ -8,6 +8,7 @@ MIT
 MIT
 
 @thachnuida/ngx-uplot
+MIT
 
 placement.js
 MIT
